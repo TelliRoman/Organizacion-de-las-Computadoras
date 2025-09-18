@@ -1,0 +1,27 @@
+.data 
+    V: .word 345,457,45,67,456,2425,5876,354,12,23,400,677,44,2344,1123,56,333,112,556,444
+    A: .word 80   #4 bytes por 20 variables = 80 bytes
+.text
+	la a0,V
+	la a1,A
+	jal funcion
+	li a7,10
+	ecall
+	
+	funcion:
+		lw t0,(a1)
+		li t1,0
+		li t3,400
+		li t6,0
+		addi t2,a0,0 #Cargo en t2 la direcc de inicio del vector la t2,V
+		for: beq t1,t0,fin
+			addi t1,t1,4
+			lw t4,(t2)
+			sgt t5,t4,t3 #Guardo un 1 en t5 si t4>t3
+			add t6,t6,t5 #Sumarlo al acumulador
+			addi t2,t2,4
+		j for
+		
+		fin: 
+			addi a2,t6,0
+			jr ra

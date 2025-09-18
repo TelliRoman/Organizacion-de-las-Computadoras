@@ -1,0 +1,323 @@
+$date
+	Tue Oct 10 10:19:55 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module Ej_01_tb $end
+$var wire 32 ! test_rd2 [31:0] $end
+$var wire 32 " test_rd1 [31:0] $end
+$var wire 32 # test_rd [31:0] $end
+$var wire 16 $ test_pc [15:0] $end
+$var reg 1 % clk $end
+$var reg 5 & test_a1 [4:0] $end
+$var reg 5 ' test_a2 [4:0] $end
+$var reg 5 ( test_a3 [4:0] $end
+$var reg 16 ) test_adress [15:0] $end
+$var reg 16 * test_pcNext [15:0] $end
+$var reg 32 + test_wd3 [31:0] $end
+$var reg 1 , test_we $end
+$scope module BR_1 $end
+$var wire 5 - a1 [4:0] $end
+$var wire 5 . a2 [4:0] $end
+$var wire 5 / a3 [4:0] $end
+$var wire 1 % clk $end
+$var wire 32 0 wd3 [31:0] $end
+$var wire 1 , we $end
+$var wire 32 1 rd2 [31:0] $end
+$var wire 32 2 rd1 [31:0] $end
+$upscope $end
+$scope module IM_1 $end
+$var wire 16 3 adress [15:0] $end
+$var wire 32 4 rd [31:0] $end
+$upscope $end
+$scope module PC_1 $end
+$var wire 1 % clk $end
+$var wire 16 5 pcNext [15:0] $end
+$var reg 16 6 pc [15:0] $end
+$upscope $end
+$upscope $end
+$scope module UC_09_tb $end
+$var wire 3 7 aluControl [2:0] $end
+$var reg 2 8 aluOp [1:0] $end
+$var reg 1 9 clk $end
+$var reg 3 : f3 [2:0] $end
+$var reg 1 ; f7 $end
+$var reg 1 < op5 $end
+$scope module aluDeco_1 $end
+$var wire 2 = aluOp [1:0] $end
+$var wire 3 > f3 [2:0] $end
+$var wire 1 ; f7 $end
+$var wire 1 < op5 $end
+$var reg 3 ? aluControl [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx ?
+bx >
+bx =
+x<
+x;
+bx :
+09
+bx 8
+bx 7
+bx 6
+bx 5
+bx 4
+bx 3
+b0 2
+bx 1
+b0 0
+b0 /
+b1 .
+b0 -
+1,
+b0 +
+bx *
+bx )
+b0 (
+b1 '
+b0 &
+0%
+bx $
+bx #
+b0 "
+bx !
+$end
+#50000
+19
+1%
+#100000
+b0 7
+b0 ?
+09
+0%
+b0 8
+b0 =
+b1 +
+b1 0
+b1 (
+b1 /
+b0 )
+b0 3
+b0 *
+b0 5
+#150000
+b1 !
+b1 1
+b0 $
+b0 6
+19
+1%
+#200000
+09
+0%
+#250000
+19
+1%
+#300000
+09
+0%
+#350000
+19
+1%
+#400000
+b1 7
+b1 ?
+09
+0%
+b1 8
+b1 =
+#450000
+19
+1%
+#500000
+09
+0%
+#550000
+19
+1%
+#600000
+09
+0%
+b10 +
+b10 0
+b10 (
+b10 /
+b1 )
+b1 3
+b1 *
+b1 5
+#650000
+b1 $
+b1 6
+19
+1%
+#700000
+b0 7
+b0 ?
+09
+0%
+0;
+0<
+b0 :
+b0 >
+b10 8
+b10 =
+#750000
+19
+1%
+#800000
+09
+0%
+#850000
+19
+1%
+#900000
+09
+0%
+#950000
+19
+1%
+#1000000
+b1 7
+b1 ?
+09
+0%
+1;
+1<
+#1050000
+19
+1%
+#1100000
+09
+0%
+0,
+b10 )
+b10 3
+b10 *
+b10 5
+#1150000
+b10 $
+b10 6
+19
+1%
+#1200000
+09
+0%
+#1250000
+19
+1%
+#1300000
+b101 7
+b101 ?
+09
+0%
+b10 :
+b10 >
+#1350000
+19
+1%
+#1400000
+09
+0%
+#1450000
+19
+1%
+#1500000
+09
+0%
+#1550000
+19
+1%
+#1600000
+b11 7
+b11 ?
+bx !
+bx 1
+b10 "
+b10 2
+09
+0%
+b110 :
+b110 >
+b11 '
+b11 .
+b10 &
+b10 -
+b11 )
+b11 3
+b11 *
+b11 5
+#1650000
+b11 $
+b11 6
+19
+1%
+#1700000
+09
+0%
+#1750000
+19
+1%
+#1800000
+09
+0%
+#1850000
+19
+1%
+#1900000
+b10 7
+b10 ?
+09
+0%
+b111 :
+b111 >
+#1950000
+19
+1%
+#2000000
+09
+0%
+#2050000
+19
+1%
+#2100000
+09
+0%
+#2150000
+19
+1%
+#2200000
+09
+0%
+#2250000
+19
+1%
+#2300000
+09
+0%
+#2350000
+19
+1%
+#2400000
+09
+0%
+#2450000
+19
+1%
+#2500000
+09
+0%
+#2550000
+19
+1%
+#2600000
+09
+0%

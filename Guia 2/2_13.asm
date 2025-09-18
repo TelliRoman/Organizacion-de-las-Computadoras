@@ -1,0 +1,3 @@
+.text
+li t1,0x12345678
+ori t1,t1,0xf

@@ -1,0 +1,47 @@
+.data 
+    V: .word 30,8,30,7,12,10,90,80,90,10,11,10,13,14,150,16,17,18,19,5
+    A: .word 80   #4 bytes por 20 variables = 80 bytes
+.text
+	li a0,0x10010000 # la a0,V
+	la a1,A 
+	jal BuscarMenor 
+	jal BuscarMayor
+	sw a2,4(a1) 
+	sw a3,8(a1)
+	li a7,10
+	ecall
+	
+	BuscarMenor:
+		lw t0,(a0) #Leo el primer elemento del arreglo (que usamos como menor)
+		addi t2,a0,0 #la t2,V
+		addi t5,t5,0
+	     	addi t6,t6,19
+		for: beq t5,t6,fin
+			addi t5,t5,1
+			addi t2,t2,4 #Cargo pos de memoria del siguiente elemento
+			lw t1,(t2) #Leo el siguiente elemesnto
+			slt t3,t1,t0 #si t1 < t0 guarda un t3=1 
+			beqz t3, mismomenor
+			addi t0,t1,0
+			mismomenor: 
+			j for
+		fin:
+			addi a2,t0,0
+			jr ra
+	BuscarMayor:
+		lw t0,(a0) #Leo el primer elemento del arreglo (que usamos como mayor)
+		addi t2,a0,0 #Me guardo en t2 la pos del primer elemento
+		addi t5,t5,0
+	     	addi t6,t6,19
+		for2: beq t5,t6,fin2
+			addi t5,t5,1
+			addi t2,t2,4 #Cargo pos de memoria del siguiente elemento
+			lw t1,(t2) #Leo el siguiente elemesnto
+			sgt t3,t1,t0 #si t1 > t0 guarda un t3=1
+			beqz t3, mismomayor
+			addi t0,t1,0
+			mismomayor: 
+			j for2
+		fin2:
+			addi a3,t0,0
+			jr ra

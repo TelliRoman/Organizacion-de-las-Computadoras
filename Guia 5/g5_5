@@ -1,0 +1,26 @@
+.data 
+    V: .word 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+    A: .word 60   #4 bytes por 15 variables = 60 bytes
+.text
+
+la a0,V
+la a1,A
+jal promVector
+li a7,10
+ecall			
+	promVector:
+		lw t1,(a1)#Espacio del vector (60)
+		#div  a2,t1,4 
+		addi t0,t0,0 #i del for
+		addi t3,t3,0 #suma de elementos
+		for: beq t0,t1,fin
+			lw t2,(a0) #Primer Elemento
+			add t3,t3,t2 #Almaceno en t3 todos los elementos
+			addi a0,a0,4  #Me corro .|. al siguiente elemento
+			addi t0,t0,4  #INCREMENTO EL i
+			j for
+		fin:
+			addi t4,t4,4
+			div t5,t1,t4
+			div a0,t3,t5
+			jr ra
